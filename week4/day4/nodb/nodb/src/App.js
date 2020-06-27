@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
-import header from './Components/header'
-import photo from './Components/photo'
-import favorites from './Components/favorites'
+import Header from './Components/Header'
+import PhotoSetup from './Components/PhotoSetup'
+import FavoriteSetup from './Components/FavSetup'
+import axios from 'axios';
 import './App.css';
 
 class App extends Component {
@@ -51,10 +51,14 @@ class App extends Component {
   
   render(){
   return (
-    <div>
+    <div className = 'App'>
       <Header />
-      <Photo />
-      <Favorites />
+      <PhotoSetup 
+        getFn={this.chooseFavorite}/>
+      <FavoriteSetup 
+        favorites={this.state.favorites}
+        titleFn={this.editTitle}
+        deleteFn={this.deleteFavoritePhoto}/>
     </div>
   );
 }

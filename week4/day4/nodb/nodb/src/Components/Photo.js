@@ -1,35 +1,35 @@
 import React, {Component} from 'react';
-import Axios from 'axios';
-import photoCtrl from '../../server/controllers/photoCtrl';
+import { title } from 'process';
+
 
 class Photo extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            originalPhoto: [],
-            index: 0,
-            title: photo.title,
-            img: photo.url
-        }
-    }
+    handleGet = () => {
+        const {image} = this.props;
+        let newTitle = {
+            title: image.title,
+            img: image.url
 
-    componentDidMount(){
-        this.getPhoto();
-    }
-
-    getPhoto = () => {
-        axios.get('/api/photos')
-        .then(res => {
-            this.setState({originalPhoto: res.data})
-        })
-        .catch(err => console.log(err))
-    }
-
-    handleIncrement = () => {
-        this.setState({index: this.state.index + 1})
         }
 
-    handleDecrement = () => {
-        this.setState({index: this.state.index - 1})   
-    } 
+        this.props.getFn(newTitle);
+        this.props.resetFn();
+    }
+
+    // handleIncrement = () => {
+    //     this.setState({index: this.state.index + 1})
+    //     }
+
+    // handleDecrement = () => {
+    //     this.setState({index: this.state.index - 1})   
+    // } 
+
+    render(){
+        return(
+            <div onClick={this.handleGet}>
+            <img src={this.props.photo.url.front_default} alt={this.props.photo.title}/>
+            <p>{this.props.photo.title}</p>
+        </div>
+        )
+    }
 }
+export default Photo;
