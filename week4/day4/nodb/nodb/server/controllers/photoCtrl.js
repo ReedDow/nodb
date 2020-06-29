@@ -36,7 +36,7 @@ let photo = [
 module.exports = {
 
     getPhoto: (req, res) => {
-       
+
     res.status(200).send(photo)
         }
     }

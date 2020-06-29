@@ -18,7 +18,7 @@ class Photo extends Component{
         return(
             <div onClick={this.handleGet}>
             <img src={this.props.photo.url} alt=''/>
-            <p>{this.props.title}</p>
+            <p className = 'favTitles'>{this.props.title}</p>
         </div>
         )
     }

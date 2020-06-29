@@ -12,9 +12,9 @@ app.get('/api/favorites', favCtrl.getFavoritePhoto);
 
 app.post('/api/favorites', favCtrl.chooseFavorite);
 
-app.put('/api/favorites:id', favCtrl.editTitle);
+app.put('/api/favorites/:id', favCtrl.editTitle);
 
-app.delete('/api/favorites:id', favCtrl.
+app.delete('/api/favorites/:id', favCtrl.
 deleteFavoritePhoto);
 
 

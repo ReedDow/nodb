@@ -9,14 +9,13 @@ const FavoriteSetup = props => {
                 photo = {photo}
                 titleFn = {props.titleFn}
                 deleteFn = {props.deleteFn}/>
-
         )
     )
 
     
     return(
         <div>
-            <title>Favorites</title>
+            <title className = 'favTitle'>Favorites</title>
             <div className ='photos'>
                 {originalPhoto}
             </div>

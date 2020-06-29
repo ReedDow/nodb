@@ -11,13 +11,13 @@ class PhotoSetup extends Component {
         }
     }
 
-    handleIncrement = () => {
-        this.setState({index: this.state.index + 1})
-        }
+    // handleIncrement = () => {
+    //     this.setState({index: this.state.index + 1})
+    //     }
 
-    handleDecrement = () => {
-        this.setState({index: this.state.index - 1})   
-    } 
+    // handleDecrement = () => {
+    //     this.setState({index: this.state.index - 1})   
+    // } 
 
     componentDidMount(){
         this.getPhoto();

@@ -30,20 +30,20 @@ class Favorites extends Component{
                 {this.state.editing
                 ? (
                     <div>
-                        <input
+                        <input className = 'inputField'
                             value={this.state.titleInput}
                             onChange ={e => this.handleInput(e.target.value)}/>
-                        <button onClick={() => this.handleEdit(this.props.photo.id)}>Submit</button>
+                        <button className='submitButton' onClick={() => this.handleEdit(this.props.photo.id)}>Submit</button>
                     </div>
 
                 )
                 : (
                     <div>
                         <p>{this.props.photo.title}</p>
-                        <button onClick={this.handleToggle}>Edit Photo Title</button>
+                        <button className = 'editBtn' onClick={this.handleToggle}>Edit Photo Title</button>
                     </div>
                 )}
-                <button onClick={() => this.props.deleteFn(this.props.photo.id)}>Delete Photo</button>
+                <button className='delBtn' onClick={() => this.props.deleteFn(this.props.photo.id)}>Delete Photo</button>
             </div>
         )
     }

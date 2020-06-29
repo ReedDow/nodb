@@ -19,7 +19,7 @@ module.exports = {
     editTitle: (req, res) => {
         const {id} = req.params;
         const {title} = req.body;
-        console.log(name);
+        console.log(title);
         console.log(req.body)
 
         const index = favorites.findIndex(e => e.id ===+id);
