@@ -7,8 +7,17 @@ class PhotoSetup extends Component {
         super(props);
         this.state = {
             originalPhoto: [],
+            index: 0
         }
     }
+
+    handleIncrement = () => {
+        this.setState({index: this.state.index + 1})
+        }
+
+    handleDecrement = () => {
+        this.setState({index: this.state.index - 1})   
+    } 
 
     componentDidMount(){
         this.getPhoto();
@@ -23,13 +32,17 @@ class PhotoSetup extends Component {
     }
 
     render(){
-        const mappedPhoto = this.state.originalPhoto.map((photo, i) => (
+        const mappedPhoto = this.state.originalPhoto.map(
+            
+            (photo, i) => (
+
             <Photo
                 key={i}
                 photo={photo}
                 getFn={this.props.getFn}
                 resetFn={this.getPhoto}/>
         ))
+        console.log(this.props.getFn)
         return (
             <div className = 'photos'>
                 {mappedPhoto}

@@ -11,7 +11,7 @@ class App extends Component {
     this.state = {
       favorites: []
     }
-    this.favorites = this.favorites.bind(this);
+    this.chooseFavorite = this.chooseFavorite.bind(this);
   }
 
   componentDidMount(){
@@ -23,7 +23,7 @@ class App extends Component {
   }
 
   chooseFavorite(photo){
-    axios.post('api/favorites', {photo: photo})
+    axios.post('/api/favorites', {photo: photo})
     .then(res => {
       this.setState({favorites: res.data})
     })
@@ -33,7 +33,7 @@ class App extends Component {
   editTitle = (id, newTitle) => {
     let body = {title: newTitle};
 
-    axios.put(`/api/favorites/${id}`, body)
+    axios.put(`/api/favorites${id}`, body)
     .then(res => {
       this.setState({favorites: res.data})
     })
@@ -41,7 +41,7 @@ class App extends Component {
   }
 
   deleteFavoritePhoto = (id)=> {
-    axios.delete(`/api/favorites/${id}`)
+    axios.delete(`/api/favorites${id}`)
     .then(res => {
       this.setState({favorites: res.data})
     })

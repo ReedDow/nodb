@@ -1,26 +1,27 @@
 import React from 'react';
 import Favorites from './Favorites';
-import { parentPort } from 'worker_threads';
 
 const FavoriteSetup = props => {
-    const mappedPhoto = props.favorites.map(
+    const originalPhoto = props.favorites.map(
         (photo, i) => (
             <Favorites
                 key ={i}
                 photo = {photo}
                 titleFn = {props.titleFn}
                 deleteFn = {props.deleteFn}/>
+
         )
     )
+
     
     return(
-        <favoritesection>
+        <div>
             <title>Favorites</title>
             <div className ='photos'>
-                {mappedPhoto}
+                {originalPhoto}
             </div>
             
-        </favoritesection>
+        </div>
     )
 }
 export default FavoriteSetup;

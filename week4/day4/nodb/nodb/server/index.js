@@ -1,10 +1,9 @@
 const express = require('express');
-const bodyParser = require('body-parser')
 const photoCtrl = require('./controllers/photoCtrl');
 const favCtrl = require('./controllers/favCtrl');
 const app = express();
 
-app.use(express.json());
+app.use(express.json()); 
 
 app.get('/api/photos', photoCtrl.getPhoto);
 

@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 let photo = [
     {id: 1,
@@ -31,4 +31,3 @@ let photo = [
     }
 ]
 
-export default data;
